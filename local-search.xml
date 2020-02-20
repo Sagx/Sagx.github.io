@@ -4,11 +4,30 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2019/03/13/hello-world/"/>
-    <url>/2019/03/13/hello-world/</url>
+    <title>自定义爬取网易云音乐评论</title>
+    <link href="/2018/03/20/musicSpider/"/>
+    <url>/2018/03/20/musicSpider/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><pre><code>   1.自行更换讯代理的订单号及密钥，位置：\src\main\java\com\sag\util\Constants.java   2.指定初始爬取地址，位置：\src\main\java\com\sag\SpiderApplication.java   3.配置数据库地址并创建数据库music，位置：\src\main\resources\application.yml   4.运行SpiderApplication.java</code></pre><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><pre><code>   1.爬取一首歌的所有评论   2.爬取一个歌单中所有歌曲的评论   //以下待实现   3.从一个人创建的歌单里筛选Ta的所有评论   4.断点续爬   5.爬取新增评论   6.自动去重</code></pre><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><pre><code>   Java框架：springboot   爬虫框架：webmagic   代理服务方：讯代理   数据库：mysql</code></pre><h3 id="项目暂停维护说明"><a href="#项目暂停维护说明" class="headerlink" title="项目暂停维护说明"></a>项目暂停维护说明</h3><pre><code>   网易云策咯更改：经测试发现评论在爬取到5000条之后便不再返回数据，网页亲测，一首歌的评论只能点到前后251页，APP没有翻页只能往下拉不知道是不是也这样，懒得测了。</code></pre><p>More info: <a href="https://knightofbatons.github.io/2017/09/28/Setting-up-a-Github-Pages-blog-with-Hexo/" target="_blank" rel="noopener">Github</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>爬虫</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>blog start</title>
+    <link href="/2017/09/13/start/"/>
+    <url>/2017/09/13/start/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to my blog! This is a start!                                                       </p><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code>$ cd /blog/hexo$ hexo new post todayList</code></pre><h3 id="Write"><a href="#Write" class="headerlink" title="Write"></a>Write</h3><pre><code>edit /blog/hexo/source/_posts/todayList.md</code></pre><h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><pre><code>$ hexo clean$ hexo generate$ hexo server</code></pre><h3 id="Push"><a href="#Push" class="headerlink" title="Push"></a>Push</h3><pre><code>blog/public -&gt; github</code></pre><h3 id="Blog-theme-dir"><a href="#Blog-theme-dir" class="headerlink" title="Blog theme dir"></a>Blog theme dir</h3><pre><code>/blog/hexo/themes/diaspora</code></pre><p>More info: <a href="https://knightofbatons.github.io/2017/09/28/Setting-up-a-Github-Pages-blog-with-Hexo/" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
     
     
