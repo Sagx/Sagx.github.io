@@ -23,6 +23,25 @@
   
   
   <entry>
+    <title>《SQL必知必会》读书笔记</title>
+    <link href="/2017/03/15/sql/"/>
+    <url>/2017/03/15/sql/</url>
+    
+    <content type="html"><![CDATA[<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol><li>sql是不区分大小写的，但表名列名和值可能有所不同（这依赖于具体的DBMS及其如何配置）；</li><li>在指定一条order by子句时，应保证它是select语句中最后一条子句；</li><li>通配符%不会匹配值为null的数据，包括使用not like的时候；</li></ol><h2 id="SQL要点"><a href="#SQL要点" class="headerlink" title="SQL要点"></a>SQL要点</h2><h3 id="1-distinct检索不同的值"><a href="#1-distinct检索不同的值" class="headerlink" title="1. distinct检索不同的值"></a>1. distinct检索不同的值</h3><pre><code class="sql">-- 注意：作用范围为其后所有列select distinct column from table</code></pre><h3 id="2-限制条数"><a href="#2-限制条数" class="headerlink" title="2. 限制条数"></a>2. 限制条数</h3><pre><code class="sql">-- sql server使用 topselect top 5 column from table-- oracle使用 rownumselect column from table where rownum &lt;= 5-- mysql使用 limitselect column from table limit 5</code></pre><h3 id="3-通配符数据过滤"><a href="#3-通配符数据过滤" class="headerlink" title="3. 通配符数据过滤"></a>3. 通配符数据过滤</h3><pre><code class="sql">-- 下划线匹配单个字符select column from table where column like &#39;周_伦&#39;</code></pre><h3 id="4-拼接字段"><a href="#4-拼接字段" class="headerlink" title="4. 拼接字段"></a>4. 拼接字段</h3><pre><code class="sql">-- sql server使用 +select column1 + column2 from table-- oracle使用 ||select column1 || column2 from table -- mysql使用concat()函数select concat(column1,column2) from table</code></pre><h3 id="5-函数"><a href="#5-函数" class="headerlink" title="5. 函数"></a>5. 函数</h3><h5 id="1）提取字符串"><a href="#1）提取字符串" class="headerlink" title="1）提取字符串"></a>1）提取字符串</h5><pre><code class="sql">-- oracle使用substr()，如下为截取前两个字符select substr(column,0,2) from table-- sql server、mysql使用substring()，如下为取从第三个字符往后部分select substring(column,3) from table</code></pre><h5 id="2）数据类型转换"><a href="#2）数据类型转换" class="headerlink" title="2）数据类型转换"></a>2）数据类型转换</h5><pre><code class="sql">-- oracle每种类型都有一个函数：to_number()、to_date()、to_timestamp()-- sql server、mysql使用convert()select convert(&#39;23&#39;,SIGNED)</code></pre><h5 id="3）获取当前时间"><a href="#3）获取当前时间" class="headerlink" title="3）获取当前时间"></a>3）获取当前时间</h5><pre><code class="sql">-- oracle使用sysdate-- sql server使用getdate()-- mysql精确到日使用curdate()，精确到秒使用now()</code></pre><h5 id="4）时间查询处理"><a href="#4）时间查询处理" class="headerlink" title="4）时间查询处理"></a>4）时间查询处理</h5><pre><code class="sql">-- oracle查询年份select * from table where to_number(to_char(date_column,&#39;YYYY&#39;)) = 2020;select * from table where date_column between to_date(&#39;01-01-2020&#39;) and to_date(&#39;12-31-2020&#39;);-- mysql查询年份(使用year函数)select * from table where year(date_column) = 2020;</code></pre><h3 id="6-数据汇总"><a href="#6-数据汇总" class="headerlink" title="6. 数据汇总"></a>6. 数据汇总</h3><pre><code>AVG()    返回某列平均值COUNT()  返回某列行数（count(*)返回所有行数，count(column)会忽略column值为null的列）MAX()    返回某列最大值（一般用于数字或日期列）MIN()    返回某列最小值（一般用于数字或日期列）SUM()    返回某列值之和 其中，distinct可以于以上函数混用，以达到仅聚合不同值数据的目的，比如：select avg(distinct column) from table; -&gt; 查询某一列上不同数据的平均值 </code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>SQL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>记录下之前文学社投的稿</title>
     <link href="/2016/11/15/shici/"/>
     <url>/2016/11/15/shici/</url>

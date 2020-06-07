@@ -189,6 +189,87 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2017/03/15/sql/" target="_self">
+          <img src="/img/4.jpg" srcset="/img/loading.gif" alt="《SQL必知必会》读书笔记" class="index-img img-fluid rounded index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2017/03/15/sql/">
+        <p class="h4 index-header">《SQL必知必会》读书笔记</p>
+      </a>
+
+      <a href="/2017/03/15/sql/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">注意事项
+sql是不区分大小写的，但表名列名和值可能有所不同（这依赖于具体的DBMS及其如何配置）；
+在指定一条order by子句时，应保证它是select语句中最后一条子句；
+通配符%不会匹配值为null的数据，包括使用not like的时候；
+
+SQL要点1. distinct检索不同的值-- 注意：作用范围为其后所有列
+select distinct column from table
+2. 限制条数-- sql server使用 top
+select top 5 column from table
+-- oracle使用 rownum
+select column from table where rownum &lt;= 5
+-- mysql使用 limit
+select column from table limit 5
+3. 通配符数据过滤-- 下划线匹配单个字符
+select column from table where column like &#39;周_伦&#39;
+4. 拼接字段-- sql server使用 +
+select column1 + column2 from table
+-- oracle使用 ||
+select column1 || column2 from table 
+-- mysql使用concat()函数
+select concat(column1,column2) from table
+5. 函数1）提取字符串-- oracle使用substr()，如下为截取前两个字符
+select substr(column,0,2) from table
+-- sql server、mysql使用substring()，如下为取从第三个字符往后部分
+select substring(column,3) from table
+2）数据类型转换-- oracle每种类型都有一个函数：to_number()、to_date()、to_timestamp()
+-- sql server、mysql使用convert()
+select convert(&#39;23&#39;,SIGNED)
+3）获取当前时间-- oracle使用sysdate
+-- sql server使用getdate()
+-- mysql精确到日使用curdate()，精确到秒使用now()
+4）时间查询处理-- oracle查询年份
+select * from table where to_number(to_char(date_column,&#39;YYYY&#39;)) = 2020;
+select * from table where date_column between to_date(&#39;01-01-2020&#39;) and to_date(&#39;12-31-2020&#39;);
+-- mysql查询年份(使用year函数)
+select * from table where year(date_column) = 2020;
+6. 数据汇总AVG()    返回某列平均值
+COUNT()  返回某列行数（count(*)返回所有行数，count(column)会忽略column值为null的列）
+MAX()    返回某列最大值（一般用于数字或日期列）
+MIN()    返回某列最小值（一般用于数字或日期列）
+SUM()    返回某列值之和 
+其中，distinct可以于以上函数混用，以达到仅聚合不同值数据的目的，比如：
+select avg(distinct column) from table; -&gt; 查询某一列上不同数据的平均值 </div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2017-03-15&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/SQL">SQL</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2016/11/15/shici/" target="_self">
           <img src="/img/3.jpg" srcset="/img/loading.gif" alt="记录下之前文学社投的稿" class="index-img img-fluid rounded index-thumbnails">
         </a>
